@@ -1,6 +1,6 @@
 import type{ FormEvent } from "react";
 import toast from "react-hot-toast";
-import css from './SearchBar.module.css'
+import style from './SearchBar.module.css'
 
 interface SearchBarProps {
   onSubmit: (query: string) => void ;
@@ -22,26 +22,26 @@ interface SearchBarProps {
   };
 
   return (
-    <header className={css.header}>
-      <div className={css.container}>
+    <header className={style.header}>
+      <div className={style.container}>
         <a
-          className={css.link}
+          className={style.link}
           href="https://www.themoviedb.org/"
           target="_blank"
           rel="noopener noreferrer"
         >
           Powered by TMDB
         </a>
-        <form className={css.form} onSubmit={handleSubmit}>
+        <form className={style.form} onSubmit={handleSubmit}>
           <input
-            className={css.input}
+            className={style.input}
             type="text"
             name="query"
             autoComplete="off"
             placeholder="Search movies..."
             autoFocus
           />
-          <button className={css.button} type="submit">
+          <button className={style.button} type="submit">
             Search
           </button>
         </form>

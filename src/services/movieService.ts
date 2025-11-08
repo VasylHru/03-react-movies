@@ -7,8 +7,8 @@ const TOKEN = import.meta.env.VITE_TMDB_TOKEN;
 export async function fetchMovies(query: string): Promise<Movie[]> {
   const config = {
     params: {
-      search: query,
-      limit: 15,
+      query,
+      limit:1 
     },
     headers: {
       Authorization: `Bearer ${TOKEN}`,
