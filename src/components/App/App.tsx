@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
-import SearchBar from '../SearchBar/SearchBar';
-import MovieGrid from '../MovieGrid/MovieGrid';
-import Loader from '../Loader/Loader';
-import ErrorMessage from '../ErrorMessage/ErrorMessage';
-import MovieModal from '../MovieModal/MovieModal';
-import { fetchMovies } from '../../services/movieService';
-import type  Movie  from '../../types/movie';
-import styles from './App.module.css';
+import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import SearchBar from "../SearchBar/SearchBar";
+import MovieGrid from "../MovieGrid/MovieGrid";
+import Loader from "../Loader/Loader";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import MovieModal from "../MovieModal/MovieModal";
+import { fetchMovies } from "../../services/movieService";
+import type { Movie } from "../../types/movie";
+import styles from "./App.module.css";
 
 const App = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -23,13 +23,13 @@ const App = () => {
     try {
       const data = await fetchMovies(query);
       if (!data.length) {
-        toast.error('No movies found for your request.');
+        toast.error("No movies found for your request.");
         return;
       }
       setMovies(data);
     } catch {
       setIsError(true);
-      toast.error('Failed to fetch movies.');
+      toast.error("Failed to fetch movies.");
     } finally {
       setIsLoading(false);
     }
